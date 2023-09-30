@@ -99,9 +99,20 @@ background-color: rgba(0,0,0,0.4);
     margin-left: 20px;
   }
   
-  span {
+  button {
     padding-left: 5px;
     cursor: pointer;
+  }
+  
+  #closeModal {
+    position: absolute;
+    top:10px;
+    right: 10px;
+    width: 30px;
+  }
+
+  #exit {
+    width: 100%;
   }
   
   .btn {
