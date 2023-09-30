@@ -1,9 +1,6 @@
 //@ts-nocheck
-import React, { useState } from "react";
+import React from "react";
 import { SCCard } from "./ProfileElems.style";
-import ReactDOM from "react-dom";
-import Modal from "react-modal";
-import { AddCardModal } from "./ModalWindow/ModalWindow";
 
 interface ICardProps {}
 
