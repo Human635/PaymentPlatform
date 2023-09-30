@@ -7,7 +7,7 @@ describe("Тестируем компонетeнт AppLink", () => {
     render(<AppLink linkLabel={linkLabel} hasIcon={hasIcon} />);
 
   test("Компонент отображается", () => {
-    renderAppLink("test.png", "test-img");
+    renderAppLink("Тест");
 
     const linkElement = screen.getByText("Тест");
 
