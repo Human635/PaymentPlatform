@@ -6,6 +6,11 @@ interface IInputProps {
   $hasError: boolean;
 }
 
+// interface MaskedInputProps extends PatternFormatProps {
+//   $borderColor?: string;
+//   $bgc?: string;
+// }
+
 export const Input = styled.input<Partial<IInputProps>>`
   border: 1px solid
     ${(props) => (props.$borderColor ? props.$borderColor : "transparent")};
@@ -39,6 +44,14 @@ export const Input = styled.input<Partial<IInputProps>>`
     }
   }
 `;
+
+// export const MaskedInput = styled(PatternFormat)<IInputProps>`
+//   border: 1px solid
+//     ${(props) => (props.$borderColor ? props.$borderColor : "transparent")};
+//   border-radius: 10px;
+//   padding: 14px 20px;
+//   padding-right: 40px;
+// `;
 
 export const InputWrapper = styled.div<IInputProps>`
   position: relative;

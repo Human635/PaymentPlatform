@@ -1,6 +1,7 @@
 import React from "react";
 import { Input, InputWrapper } from "./AppInput.style";
 import { AppIcon } from "../AppIcon/AppIcon";
+import { PatternFormat } from "react-number-format";
 
 interface IAppInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   borderColor?: string;
@@ -11,7 +12,7 @@ interface IAppInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   $errorMessage?: string;
 }
 
-export const AppInput = ({
+export const AppInputWithFormat = ({
   type,
   name,
   bgc,
@@ -32,6 +33,7 @@ export const AppInput = ({
         disabled={isDisabled}
         {...props}
       />
+      {/* <MaskedInput format="#### #### #### ####" $bgc={bgc} /> */}
       {hasError && <p className="errorMessage">{$errorMessage}</p>}
       {iconName && <AppIcon className="inputIcon" name={iconName} />}
     </InputWrapper>
