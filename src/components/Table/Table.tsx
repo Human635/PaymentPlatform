@@ -45,7 +45,7 @@ export const Table = <T extends object>({ columns, data }: TableProps<T>) => {
             </AppTableRow>
           );
         })}
-                      <AppLink linkLabel="Показать другие валюты" hasIcon />
+        <AppLink linkLabel="Показать другие валюты" hasIcon />
       </AppTableBody>
     </AppTable>
   );

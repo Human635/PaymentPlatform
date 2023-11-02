@@ -1,26 +1,41 @@
-//@ts-nocheck
-import { AppInput } from "./AppInput";
+import React from "react";
 import { render, screen } from "@testing-library/react";
+import { AppInput } from "./AppInput";
 
-describe("Тест компонента AppInput", () => {
-  const renderAppInput = (iconName, hasError) =>
-    render(<AppInput hasError={hasError} iconName={iconName} />);
-
-  test("компонент отображается", () => {
-    renderAppInput("Тест");
-
-    const inputElement = screen.getByText("Тест");
-
+describe("AppInput", () => {
+  test("renders without error message and icon", () => {
+    render(<AppInput />);
+    const inputElement = screen.getByRole("textbox");
     expect(inputElement).toBeInTheDocument();
+    const errorMessageElement = screen.queryByText("Ошибка!");
+    expect(errorMessageElement).toBeNull();
+    const iconElement = screen.queryByTestId("input-icon");
+    expect(iconElement).toBeNull();
   });
 
-  // test("AppInput ", () => {
-  //   renderAppInput('Ошибка!', true);
+  test("renders with error message and without icon", () => {
+    render(<AppInput hasError={true} />);
+    const inputElement = screen.getByRole("textbox");
+    expect(inputElement).toBeInTheDocument();
+    const errorMessageElement = screen.getByText("Ошибка!");
+    expect(errorMessageElement).toBeInTheDocument();
+    const iconElement = screen.queryByTestId("input-icon");
+    expect(iconElement).toBeNull();
+  });
 
-  //   const errorMessage = screen.getByText("Ошибка!");
+  test("renders with icon and without error message", () => {
+    render(<AppInput iconName="icon" />);
+    const inputElement = screen.getByRole("textbox");
+    expect(inputElement).toBeInTheDocument();
+    const errorMessageElement = screen.queryByText("Ошибка!");
+    expect(errorMessageElement).toBeNull();
+  });
 
-  //   expect(errorMessage).toHaveTextContent('Ошибка!');
-
-  //   // screen.debug();
-  // });
+  test("renders with error message and icon", () => {
+    render(<AppInput hasError={true} iconName="icon" />);
+    const inputElement = screen.getByRole("textbox");
+    expect(inputElement).toBeInTheDocument();
+    const errorMessageElement = screen.getByText("Ошибка!");
+    expect(errorMessageElement).toBeInTheDocument();
+  });
 });

@@ -31,8 +31,8 @@ export const SCExchangeTable = styled(SCAppWidget)`
 
   .AppElem {
     .AppImage {
-      height: calc(1.9vw + 23px); //? 60 | 30
-      width: calc(1.9vw + 23px); //? 60 | 30
+      height: calc(1.9vw + 23px);
+      width: calc(1.9vw + 23px);
     }
   }
 
